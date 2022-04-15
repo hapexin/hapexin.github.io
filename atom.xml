@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>新家建设中</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2022-04-15T03:46:31.735Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>yzx</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简单笔记收集(持续更新)</title>
+    <link href="http://example.com/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/"/>
+    <id>http://example.com/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/</id>
+    <published>2022-04-04T12:52:03.000Z</published>
+    <updated>2022-04-15T03:46:31.735Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;本笔记致力于收集日常学习中的知识点用于后续整理，不做详细记录，部分是我自己的理解&lt;/p&gt;
+&lt;h3 id=&quot;关于node-js&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+    <category term="notes" scheme="http://example.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2022/04/04/hello-world/"/>
+    <id>http://example.com/2022/04/04/hello-world/</id>
+    <published>2022-04-04T08:58:44.378Z</published>
+    <updated>2022-04-04T08:58:44.378Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

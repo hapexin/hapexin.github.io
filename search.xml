@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>简单笔记收集(持续更新)</title>
+    <url>/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本笔记致力于收集日常学习中的知识点用于后续整理，不做详细记录，部分是我自己的理解</p>
+<h3 id="关于node-js"><a href="#关于node-js" class="headerlink" title="关于node.js"></a>关于node.js</h3><ul>
+<li><h4 id="各种报错"><a href="#各种报错" class="headerlink" title="各种报错"></a>各种报错</h4><ul>
+<li>npm install时npm ERR！：<ul>
+<li>老node.js没有完全删除<ul>
+<li>删掉原来的package.json</li>
+</ul>
+</li>
+<li>权限不够，管理员权限打开cmd</li>
+</ul>
+</li>
+<li>port 443<ul>
+<li>开全局代理</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于hexo"><a href="#关于hexo" class="headerlink" title="关于hexo"></a>关于hexo</h3><ul>
+<li><h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><ul>
+<li>建立新页面hexo new<name></li>
+<li>上传到github hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</li>
+</ul>
+</li>
+<li><h4 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h4><ul>
+<li>timezone: Asia&#x2F;Shanghai 把上海改成北京 hexo g会报错</li>
+</ul>
+</li>
+</ul>
+<h3 id="linux指令"><a href="#linux指令" class="headerlink" title="linux指令"></a>linux指令</h3><ul>
+<li>source activate 环境名 激活环境</li>
+<li>pwd 查看当前用户目录</li>
+<li>ls 查看当前目录下内容</li>
+<li>mkdir<name> 在当前目录创建目录</li>
+<li>rm -r<name> 删除文件或目录</li>
+<li>tar -xvf<name> 解压tar文件</li>
+</ul>
+<h3 id="ssh指令"><a href="#ssh指令" class="headerlink" title="ssh指令"></a>ssh指令</h3><ul>
+<li>ssh <name>@<id> 连接服务器</li>
+<li>scp【本地文件的路径】【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】上传本地文件</li>
+<li>scp 【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】【本地文件的路径】接受服务器文件</li>
+</ul>
+<h3 id="算法竞赛"><a href="#算法竞赛" class="headerlink" title="算法竞赛"></a>算法竞赛</h3><ul>
+<li><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ul>
+<li>树状数组(大部分情况下能代替线段树)<ul>
+<li>原理<ul>
+<li>忘了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>树链刨分<ul>
+<li>原理<ul>
+<li>忘了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><ul>
+<li>DP<ul>
+<li>建设中</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="关于机器学习"><a href="#关于机器学习" class="headerlink" title="关于机器学习"></a>关于机器学习</h3><ul>
+<li><h4 id="二值化"><a href="#二值化" class="headerlink" title="二值化"></a>二值化</h4><ul>
+<li><p>实现：</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">b = -torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">output = torch.where(<span class="built_in">input</span>&gt;=<span class="number">0</span>,a,b)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="mAP"><a href="#mAP" class="headerlink" title="mAP"></a>mAP</h4><ul>
+<li><p><strong>True positives(TP)</strong>:预测为正例且实际为正例的个数</p>
+</li>
+<li><p><strong>False positives(FP)</strong>:预测为正例且实际为负例的个数</p>
+</li>
+<li><p><strong>False positives(FN)</strong>:预测为负例但实际为正例的个数</p>
+</li>
+<li><p><strong>True positives(TN)</strong>:预测为负例但实际为负例的个数</p>
+</li>
+<li><p><strong>precision</strong></p>
+<ul>
+<li>所有预测为正例的样本中预测正确的比例</li>
+<li>precision&#x3D;TP&#x2F;(TP+FP)</li>
+</ul>
+</li>
+<li><p><strong>recell</strong></p>
+<ul>
+<li>所有实际为正例的样本被正确预测的比例</li>
+<li>recell&#x3D;TP&#x2F;(TP+FN)</li>
+</ul>
+</li>
+<li><p><strong>AP</strong></p>
+<ul>
+<li><p>以目标检测为例，每个categorie对应一个AP</p>
+<ul>
+<li><p>每一个被保留的bounding box视为一个预测为正例的样本，将bounding box与Ground truth进行IoU计算，将IoU大于阈值的目标视为TP</p>
+</li>
+<li><p>以confidence值为依据从大到小排序</p>
+</li>
+<li><p>rank从小到大依次计算precision与recall，此时的将最小rank到当前rank累计预测为正例的样本视为当前所有<strong>预测为正例</strong>的样本，<strong>实际为正例</strong>的样本数不受rank值影响(这导致precision值随recall升高呈下降趋势)</p>
+</li>
+<li><p>计算AP就是计算Precision-Recall的下面积</p>
+</li>
+<li><p>AP计算方法(VOC2010之后)(recall处于0到1之间所以能这样计算面积)</p>
+<p>  <img src="D:\Blog\source_posts\1.png"><img src="D:\Blog\source_posts\2.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>mAP</strong></p>
+<ul>
+<li>每个categorie的AP的均值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h4><ul>
+<li><h5 id="单卡训练简单流程"><a href="#单卡训练简单流程" class="headerlink" title="单卡训练简单流程"></a>单卡训练简单流程</h5><ul>
+<li>设置训练参数(data_path,save_path,lr,resume,batch_size,epoch)</li>
+<li>选择网络</li>
+<li>加载网络参数</li>
+<li>选择优化器</li>
+<li>读取数据生成Variable</li>
+<li>进行推理</li>
+<li>计算loss</li>
+<li>反向传播计算梯度</li>
+<li>使用优化器更新参数</li>
+<li>loss累加，计算均值</li>
+<li>保存模型</li>
+</ul>
+</li>
+<li><p>实现模板</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">   model = <span class="comment">#实例化模型</span></span><br><span class="line">   model.load_state_dict() <span class="comment">#加载网络参数，具体读取方法依模型保存方式而定</span></span><br><span class="line">   optimizer = <span class="comment">#实例化优化器，优化器从torch.optim导入</span></span><br><span class="line">   train_dataset = <span class="comment">#实例化dataset</span></span><br><span class="line">   train_dataloader = DataLoader(train_dataset, batch_size) <span class="comment">#使用Dataloader装载数据，train_data为实例化的dataset的子类，参数shuffle：是否打乱数据，sampler：加载顺序，batch_sampler:采样方式，num_wokers:读取进程数</span></span><br><span class="line">   <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(start_epoch, epoch_num):</span><br><span class="line">       <span class="keyword">for</span> index, data <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dataloader):</span><br><span class="line">           <span class="comment">#读取数据，推理，计算loss并累加，反向传播计算梯度，更新参数，计数并保存数据</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">name</span>(<span class="title class_ inherited__">Dataset</span>):<span class="comment"># 读取数据需要构造一个Dataset的子类表示键到数据的映射</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, transform=</span>):</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, index</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br></pre></td></tr></table></figure>
+
+
+<p>​    </p>
+<ul>
+<li><h4 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h4><ul>
+<li><h5 id="基本剪枝类型"><a href="#基本剪枝类型" class="headerlink" title="基本剪枝类型"></a>基本剪枝类型</h5><ul>
+<li>结构化剪枝(对通道进行剪枝)<ul>
+<li>方法多种多样，大部分要计算额外的loss或使用特殊训练方式，随机剪枝无需特殊训练方法及额外loss但效率过低</li>
+</ul>
+</li>
+<li>非结构化剪枝<ul>
+<li>对卷积核每个点位进行修剪</li>
+<li>需要稀疏卷积(开源的稀疏卷积实现不了组卷积)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h5 id="ACOSP"><a href="#ACOSP" class="headerlink" title="ACOSP"></a>ACOSP</h5><ul>
+<li>类似随机剪枝，但使用模拟退火算法使剪枝效率更高，论文提供的代码可能无法对深度可分离卷积进行剪枝(也有可能是我操作有问题)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="卷积核"><a href="#卷积核" class="headerlink" title="卷积核"></a>卷积核</h4><ul>
+<li>深度可分离卷积(depthwise separable convolution)<ul>
+<li>用于轻量级网络，速度快，不利于提取通道间信息</li>
+<li>难以优化( 剪枝要特殊处理，稀疏深度可分离卷积没开源)</li>
+</ul>
+</li>
+<li>组卷积(group convolution)<ul>
+<li>不熟</li>
+<li>shufflenet提到警惕群组卷积(影响gpu上运行速度)</li>
+</ul>
+</li>
+<li>稀疏卷积<ul>
+<li>一种优化，加速0的运算速度(大概是这样)</li>
+<li>(说一下猜测)普通卷积速度慢可能是因为0的类型为float32且torch无法混合精度计算，或者稀疏卷积有特殊的转二维操作</li>
+</ul>
+</li>
+<li>skip-conv<ul>
+<li>用于视频处理</li>
+<li>加入门控函数，对输入的残差做卷积</li>
+<li>加速依赖稀疏卷积</li>
+<li>会产生更大参数量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="经典主干网络"><a href="#经典主干网络" class="headerlink" title="经典主干网络"></a>经典主干网络</h4><ul>
+<li>ResNet<ul>
+<li>提出残差结构，防止网络随深度增加退化，提出瓶颈层，降低计算量</li>
+</ul>
+</li>
+<li>MobilenetV1<ul>
+<li>提出深度可分离卷积</li>
+<li>使用ReLU6激活函数(防止使用float16时的精度损失)</li>
+</ul>
+</li>
+<li>MobilenetV2<ul>
+<li>提出逆残差结构</li>
+<li>每个残差块使用一次ReLU6激活函数，减少特征损失</li>
+</ul>
+</li>
+<li>MobilenetV3<ul>
+<li>相比MobilenetV2，每个block加入SE模块并更新激活函数(h-swish)</li>
+<li>重新设计耗时层</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h4><ul>
+<li><strong>yolov1</strong><ul>
+<li>根据论文，利用卷积神经网络(参考GooLeNet)得到7x7x30的输出(7x7个grid cell)</li>
+<li>grid cell<ul>
+<li>每个cell拥有30个值</li>
+<li>类别概率值(20个值)</li>
+<li>两个Bounding Box(10个值)<ul>
+<li>每个Bounding Box包含边界框中心坐标与边界框长宽及confidence值(表示边界在此grid cell的边界框中包含物体的概率)</li>
+<li>表示为(x,y,w,h,c)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>loss<ul>
+<li>计算x,y,w,h的位置误差，计算confidence误差(计算Non-reponsible的bbox对应的confidence值时降低权重)，计算分类误差</li>
+<li>累加</li>
+</ul>
+</li>
+<li>非极大值抑制(NMS)<ul>
+<li>基于IoU阈值和置信度排序迭代选择所有要输出的边界框</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>yolov2</strong><ul>
+<li>加入BN层</li>
+<li>在ImageNet分类数据集上训练CNN特征提取器时将输入从224x224提升到448x448</li>
+<li>？</li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+<li><h4 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h4><ul>
+<li><p><strong>aspp</strong></p>
+</li>
+<li><p><strong>r-aspp</strong></p>
+</li>
+<li><p><strong>lr-aspp</strong></p>
+</li>
+<li><p><strong>RVM</strong></p>
+<ul>
+<li>matting不做二值化，相比分割，matting可以获取视觉效果更好的边缘</li>
+<li>整体结构类似Unet</li>
+<li>主干使用MobilenetV3-large+LR-ASPP或ResNet50</li>
+<li>decoder使用ConvGRU获取时序信息</li>
+<li>最后一阶段使用DGF进行上采样</li>
+<li>简评：人像边缘精度较高，动作连贯，耗时较少，训练过程繁琐，DGF模块耗时长，在牺牲一些效果的情况下可以用插值替代，decoder阶段完全使用普通卷积，可以优化</li>
+<li>使用视频抠图与图片抠图训练(matting数据集通过人像加背景合成，可能效果有限)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>notes</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,221 +1,106 @@
 <!DOCTYPE html>
+
+
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 6.1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="关于node.js 各种报错 npm install时npm ERR！： 老node.js没有完全删除 删掉原来的package.json   权限不够，已管理员权限打开cmd   port 443 开全局代理      关于hexo 常用指令 建立新页面hexo new 上传到github hexo clean &amp;&amp; hexo g &amp;&amp; hexo d   踩过的坑">
-<meta property="og:type" content="article">
-<meta property="og:title" content="简单笔记收集(持续更新)">
-<meta property="og:url" content="http://example.com/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/index.html">
-<meta property="og:site_name" content="新家建设中">
-<meta property="og:description" content="关于node.js 各种报错 npm install时npm ERR！： 老node.js没有完全删除 删掉原来的package.json   权限不够，已管理员权限打开cmd   port 443 开全局代理      关于hexo 常用指令 建立新页面hexo new 上传到github hexo clean &amp;&amp; hexo g &amp;&amp; hexo d   踩过的坑">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-04T12:52:03.000Z">
-<meta property="article:modified_time" content="2022-04-04T14:44:32.776Z">
-<meta property="article:author" content="yzx">
-<meta property="article:tag" content="notes">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="http://example.com/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>简单笔记收集(持续更新) | 新家建设中</title>
   
 
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">新家建设中</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
-            
-
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="yzx">
-      <meta itemprop="description" content="用于存储学习笔记(暂时)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="新家建设中">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          简单笔记收集(持续更新)
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-04-04 20:52:03 / 修改时间：22:44:32" itemprop="dateCreated datePublished" datetime="2022-04-04T20:52:03+08:00">2022-04-04</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+    <head>
+      <meta charset="utf-8" />
+        
+      <meta name="description" content="用于存储学习笔记(暂时)" />
+      
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <title>简单笔记收集(持续更新) |  新家建设中</title>
+  <meta name="generator" content="hexo-theme-ayer">
+      
+      <link rel="shortcut icon" href="/favicon.ico" />
+       
+<link rel="stylesheet" href="/dist/main.css">
 
       
-        <h3 id="关于node-js"><a href="#关于node-js" class="headerlink" title="关于node.js"></a>关于node.js</h3><ul>
+<link rel="stylesheet" href="/css/fonts/remixicon.css">
+
+      
+<link rel="stylesheet" href="/css/custom.css">
+ 
+      <script src="https://cdn.staticfile.org/pace/1.2.4/pace.min.js"></script>
+       
+ 
+
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-bulma@5.0.1/bulma.min.css"
+      />
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+
+      <!-- mermaid -->
+      
+      <style>
+        .swal2-styled.swal2-confirm {
+          font-size: 1.6rem;
+        }
+      </style>
+    <link rel="alternate" href="/atom.xml" title="新家建设中" type="application/atom+xml">
+</head>
+  </html>
+</html>
+
+
+<body>
+  <div id="app">
+    
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-简单笔记收集"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  简单笔记收集(持续更新)
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/" class="article-date">
+  <time datetime="2022-04-04T12:52:03.000Z" itemprop="datePublished">2022-04-04</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a>
+  </div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本笔记致力于收集日常学习中的知识点用于后续整理，不做详细记录，部分是我自己的理解</p>
+<h3 id="关于node-js"><a href="#关于node-js" class="headerlink" title="关于node.js"></a>关于node.js</h3><ul>
 <li><h4 id="各种报错"><a href="#各种报错" class="headerlink" title="各种报错"></a>各种报错</h4><ul>
 <li>npm install时npm ERR！：<ul>
 <li>老node.js没有完全删除<ul>
 <li>删掉原来的package.json</li>
 </ul>
 </li>
-<li>权限不够，已管理员权限打开cmd</li>
+<li>权限不够，管理员权限打开cmd</li>
 </ul>
 </li>
 <li>port 443<ul>
@@ -238,22 +123,29 @@
 </ul>
 <h3 id="linux指令"><a href="#linux指令" class="headerlink" title="linux指令"></a>linux指令</h3><ul>
 <li>source activate 环境名 激活环境</li>
+<li>pwd 查看当前用户目录</li>
+<li>ls 查看当前目录下内容</li>
+<li>mkdir<name> 在当前目录创建目录</li>
+<li>rm -r<name> 删除文件或目录</li>
+<li>tar -xvf<name> 解压tar文件</li>
 </ul>
 <h3 id="ssh指令"><a href="#ssh指令" class="headerlink" title="ssh指令"></a>ssh指令</h3><ul>
-<li>别急</li>
+<li>ssh <name>@<id> 连接服务器</li>
+<li>scp【本地文件的路径】【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】上传本地文件</li>
+<li>scp 【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】【本地文件的路径】接受服务器文件</li>
 </ul>
 <h3 id="算法竞赛"><a href="#算法竞赛" class="headerlink" title="算法竞赛"></a>算法竞赛</h3><ul>
 <li><h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ul>
-<li>树状数组<ul>
+<li>树状数组(大部分情况下能代替线段树)<ul>
 <li>原理<ul>
-<li>别急</li>
+<li>忘了</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>树链刨分<ul>
 <li>原理<ul>
-<li>别急</li>
+<li>忘了</li>
 </ul>
 </li>
 </ul>
@@ -269,8 +161,60 @@
 </li>
 </ul>
 <h3 id="关于机器学习"><a href="#关于机器学习" class="headerlink" title="关于机器学习"></a>关于机器学习</h3><ul>
+<li><h4 id="二值化"><a href="#二值化" class="headerlink" title="二值化"></a>二值化</h4><ul>
+<li><p>实现：</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">b = -torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">output = torch.where(<span class="built_in">input</span>&gt;=<span class="number">0</span>,a,b)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><h4 id="mAP"><a href="#mAP" class="headerlink" title="mAP"></a>mAP</h4><ul>
+<li><p><strong>True positives(TP)</strong>:预测为正例且实际为正例的个数</p>
+</li>
+<li><p><strong>False positives(FP)</strong>:预测为正例且实际为负例的个数</p>
+</li>
+<li><p><strong>False positives(FN)</strong>:预测为负例但实际为正例的个数</p>
+</li>
+<li><p><strong>True positives(TN)</strong>:预测为负例但实际为负例的个数</p>
+</li>
+<li><p><strong>precision</strong></p>
+<ul>
+<li>所有预测为正例的样本中预测正确的比例</li>
+<li>precision&#x3D;TP&#x2F;(TP+FP)</li>
+</ul>
+</li>
+<li><p><strong>recell</strong></p>
+<ul>
+<li>所有实际为正例的样本被正确预测的比例</li>
+<li>recell&#x3D;TP&#x2F;(TP+FN)</li>
+</ul>
+</li>
+<li><p><strong>AP</strong></p>
+<ul>
+<li><p>以目标检测为例，每个categorie对应一个AP</p>
+<ul>
+<li><p>每一个被保留的bounding box视为一个预测为正例的样本，将bounding box与Ground truth进行IoU计算，将IoU大于阈值的目标视为TP</p>
+</li>
+<li><p>以confidence值为依据从大到小排序</p>
+</li>
+<li><p>rank从小到大依次计算precision与recall，此时的将最小rank到当前rank累计预测为正例的样本视为当前所有<strong>预测为正例</strong>的样本，<strong>实际为正例</strong>的样本数不受rank值影响(这导致precision值随recall升高呈下降趋势)</p>
+</li>
+<li><p>计算AP就是计算Precision-Recall的下面积</p>
+</li>
+<li><p>AP计算方法(VOC2010之后)(recall处于0到1之间所以能这样计算面积)</p>
+<p>  <img src="D:\Blog\source_posts\1.png"><img src="D:\Blog\source_posts\2.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>mAP</strong></p>
+<ul>
+<li>每个categorie的AP的均值</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><h4 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h4><ul>
-<li><h5 id="简单流程"><a href="#简单流程" class="headerlink" title="简单流程"></a>简单流程</h5><ul>
+<li><h5 id="单卡训练简单流程"><a href="#单卡训练简单流程" class="headerlink" title="单卡训练简单流程"></a>单卡训练简单流程</h5><ul>
 <li>设置训练参数(data_path,save_path,lr,resume,batch_size,epoch)</li>
 <li>选择网络</li>
 <li>加载网络参数</li>
@@ -285,12 +229,15 @@
 </ul>
 </li>
 <li><p>实现模板</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   model = <span class="comment">#实例化模型</span></span><br><span class="line">   model.load_state_dict() <span class="comment">#加载网络参数，具体读取方法依模型保存方式而定</span></span><br><span class="line">   optimizer = <span class="comment">#实例化优化器，优化器从torch.optim导入</span></span><br><span class="line">   train_dataset = <span class="comment">#实例化dataset</span></span><br><span class="line">   train_dataloader = DataLoader(train_dataset, batch_size) <span class="comment">#使用Dataloader装载数据，train_data为实例化的dataset的子类，参数shuffle：是否打乱数据，sampler：加载顺序，batch_sampler:采样方式，num_wokers:读取进程数</span></span><br><span class="line">   <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(start_epoch, epoch_num):</span><br><span class="line">       <span class="keyword">for</span> index, data <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dataloader):</span><br><span class="line">           <span class="comment">#读取数据，推理，计算loss并累加，反向传播计算梯度，更新参数，计数并保存数据</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">name</span>(<span class="title class_ inherited__">Dataset</span>):<span class="comment"># 读取数据需要构造一个Dataset的子类表示键到数据的映射</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, transform=</span>):</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, index</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br></pre></td></tr></table></figure>
+
+
+<p>​    </p>
 <ul>
-<li>别急</li>
-</ul>
-</li>
-</ul>
-</li>
 <li><h4 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h4><ul>
 <li><h5 id="基本剪枝类型"><a href="#基本剪枝类型" class="headerlink" title="基本剪枝类型"></a>基本剪枝类型</h5><ul>
 <li>结构化剪枝(对通道进行剪枝)<ul>
@@ -298,12 +245,13 @@
 </ul>
 </li>
 <li>非结构化剪枝<ul>
+<li>对卷积核每个点位进行修剪</li>
 <li>需要稀疏卷积(开源的稀疏卷积实现不了组卷积)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><h4 id="ACOSP"><a href="#ACOSP" class="headerlink" title="ACOSP"></a>ACOSP</h4><ul>
+<li><h5 id="ACOSP"><a href="#ACOSP" class="headerlink" title="ACOSP"></a>ACOSP</h5><ul>
 <li>类似随机剪枝，但使用模拟退火算法使剪枝效率更高，论文提供的代码可能无法对深度可分离卷积进行剪枝(也有可能是我操作有问题)</li>
 </ul>
 </li>
@@ -329,223 +277,512 @@
 <li>用于视频处理</li>
 <li>加入门控函数，对输入的残差做卷积</li>
 <li>加速依赖稀疏卷积</li>
+<li>会产生更大参数量</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><h4 id="经典主干网络"><a href="#经典主干网络" class="headerlink" title="经典主干网络"></a>经典主干网络</h4><ul>
-<li>别急</li>
+<li>ResNet<ul>
+<li>提出残差结构，防止网络随深度增加退化，提出瓶颈层，降低计算量</li>
+</ul>
+</li>
+<li>MobilenetV1<ul>
+<li>提出深度可分离卷积</li>
+<li>使用ReLU6激活函数(防止使用float16时的精度损失)</li>
+</ul>
+</li>
+<li>MobilenetV2<ul>
+<li>提出逆残差结构</li>
+<li>每个残差块使用一次ReLU6激活函数，减少特征损失</li>
+</ul>
+</li>
+<li>MobilenetV3<ul>
+<li>相比MobilenetV2，每个block加入SE模块并更新激活函数(h-swish)</li>
+<li>重新设计耗时层</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><h4 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h4><ul>
-<li>学习中，少话</li>
+<li><strong>yolov1</strong><ul>
+<li>根据论文，利用卷积神经网络(参考GooLeNet)得到7x7x30的输出(7x7个grid cell)</li>
+<li>grid cell<ul>
+<li>每个cell拥有30个值</li>
+<li>类别概率值(20个值)</li>
+<li>两个Bounding Box(10个值)<ul>
+<li>每个Bounding Box包含边界框中心坐标与边界框长宽及confidence值(表示边界在此grid cell的边界框中包含物体的概率)</li>
+<li>表示为(x,y,w,h,c)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>loss<ul>
+<li>计算x,y,w,h的位置误差，计算confidence误差(计算Non-reponsible的bbox对应的confidence值时降低权重)，计算分类误差</li>
+<li>累加</li>
+</ul>
+</li>
+<li>非极大值抑制(NMS)<ul>
+<li>基于IoU阈值和置信度排序迭代选择所有要输出的边界框</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>yolov2</strong><ul>
+<li>加入BN层</li>
+<li>在ImageNet分类数据集上训练CNN特征提取器时将输入从224x224提升到448x448</li>
+<li>？</li>
+</ul>
+</li>
+<li></li>
 </ul>
 </li>
 <li><h4 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h4><ul>
-<li>相比分割，抠图可以获取更好的边缘(个人感觉)</li>
-<li>RVM <ul>
-<li>主干使用MobileNetV3-large+LR-ASPP或ResNet50</li>
-<li>使用</li>
+<li><p><strong>aspp</strong></p>
+</li>
+<li><p><strong>r-aspp</strong></p>
+</li>
+<li><p><strong>lr-aspp</strong></p>
+</li>
+<li><p><strong>RVM</strong></p>
+<ul>
+<li>matting不做二值化，相比分割，matting可以获取视觉效果更好的边缘</li>
+<li>整体结构类似Unet</li>
+<li>主干使用MobilenetV3-large+LR-ASPP或ResNet50</li>
+<li>decoder使用ConvGRU获取时序信息</li>
+<li>最后一阶段使用DGF进行上采样</li>
+<li>简评：人像边缘精度较高，动作连贯，耗时较少，训练过程繁琐，DGF模块耗时长，在牺牲一些效果的情况下可以用插值替代，decoder阶段完全使用普通卷积，可以优化</li>
+<li>使用视频抠图与图片抠图训练(matting数据集通过人像加背景合成，可能效果有限)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-
+ 
+      <!-- reward -->
+      
     </div>
-
-    
-    
     
 
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/notes/" rel="tag"># notes</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/04/04/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
-      </footer>
+    <!-- copyright -->
     
-  </article>
-  
-  
-  
-
-
-
-          </div>
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
           
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
         </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Enode-js"><span class="nav-number">1.</span> <span class="nav-text">关于node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E6%8A%A5%E9%94%99"><span class="nav-number">1.1.</span> <span class="nav-text">各种报错</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ehexo"><span class="nav-number">2.</span> <span class="nav-text">关于hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">2.1.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B8%A9%E8%BF%87%E7%9A%84%E5%9D%91"><span class="nav-number">2.2.</span> <span class="nav-text">踩过的坑</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E6%8C%87%E4%BB%A4"><span class="nav-number">3.</span> <span class="nav-text">linux指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">ssh指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B"><span class="nav-number">5.</span> <span class="nav-text">算法竞赛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">5.1.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="nav-number">6.</span> <span class="nav-text">关于机器学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83"><span class="nav-number">6.1.</span> <span class="nav-text">训练</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%B5%81%E7%A8%8B"><span class="nav-number">6.1.1.</span> <span class="nav-text">简单流程</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%AA%E6%9E%9D"><span class="nav-number">6.2.</span> <span class="nav-text">剪枝</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%89%AA%E6%9E%9D%E7%B1%BB%E5%9E%8B"><span class="nav-number">6.2.1.</span> <span class="nav-text">基本剪枝类型</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ACOSP"><span class="nav-number">6.3.</span> <span class="nav-text">ACOSP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E6%A0%B8"><span class="nav-number">6.4.</span> <span class="nav-text">卷积核</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E4%B8%BB%E5%B9%B2%E7%BD%91%E7%BB%9C"><span class="nav-number">6.5.</span> <span class="nav-text">经典主干网络</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="nav-number">6.6.</span> <span class="nav-text">目标检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="nav-number">6.7.</span> <span class="nav-text">图像分割</span></a></li></ol></li></ol></div>
       </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="yzx"
-      src="/images/avatar.png">
-  <p class="site-author-name" itemprop="name">yzx</p>
-  <div class="site-description" itemprop="description">用于存储学习笔记(暂时)</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
 </div>
 
-
-
-      </div>
-
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2022/04/04/%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0%E6%94%B6%E9%9B%86/" alt="微信分享二维码">
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; Mon Apr 04 2022 08:00:00 GMT+0800 (香港标准时间) – 
-  <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yzx</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
 
-        
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
 
-
-
-
-
-
-
-
-      </div>
     </footer>
   </div>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2022/04/04/hello-world/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Hello World</div>
+      </a>
+    
+  </nav>
 
   
+   
+     
+</article>
 
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2022
+        <i class="ri-heart-fill heart_icon"></i> yzx
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>    
+    </main>
+    <div class="float_btns">
+      <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
 
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
   
-
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="新家建设中"></a>
+  </div>
   
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friends">友链</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <div id="mask"></div>
 
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-3.6.0.min.js"></script>
+ 
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.css"
+/>
+<script src="https://cdn.staticfile.org/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+ <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/photoswipe/4.1.3/default-skin/default-skin.min.css">
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="https://cdn.staticfile.org/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script> 
+<!-- MathJax -->
+ <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+      tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+  });
+
+  MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/MathJax.js"></script>
+<script src="https://cdn.staticfile.org/mathjax/2.7.7/config/TeX-AMS-MML_HTMLorMML-full.js"></script>
+<script>
+  var ayerConfig = {
+    mathjax: true,
+  };
+</script>
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+<!-- CodeCopy -->
+ 
+<link rel="stylesheet" href="/css/clipboard.css">
+ <script src="https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+ 
+<!-- CanvasBackground -->
+
+<script>
+  if (window.mermaid) {
+    mermaid.initialize({ theme: "forest" });
+  }
+</script>
+
+
+    
+    
+
+  </div>
 </body>
+
 </html>
