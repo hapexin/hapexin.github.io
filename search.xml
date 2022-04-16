@@ -19,11 +19,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2022/04/15/test/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>简单笔记收集(持续更新)</title>
     <url>/2022/04/04/note/</url>
     <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本笔记致力于收集日常学习中的知识点用于后续整理，不做详细记录，部分是我自己的理解</p>
@@ -48,12 +43,14 @@
 <li><h4 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h4><ul>
 <li>建立新页面hexo new<name></li>
 <li>上传到github hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</li>
+<li>hexo s创建本地网页(预览)</li>
 </ul>
 </li>
 <li><h4 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h4><ul>
 <li>timezone: Asia&#x2F;Shanghai 把上海改成北京 hexo g会报错</li>
-<li>post_asset_folder: true 的情况下，将图片放入md文件同名文件夹，markdown中的图片路径只需要填文件名(Typora中不显示图片)</li>
+<li>post_asset_folder: true 的情况下，将图片放入md文件同名文件夹，markdown中的图片路径只需要填文件名(Typora中不显示该图片)</li>
 <li>代码块中的两个&#96;&#96;&#96;要对齐且相对代码不能缩进</li>
+<li>加粗的内容不能包含:否则<strong>：</strong></li>
 </ul>
 </li>
 </ul>
@@ -62,7 +59,8 @@
 <li>pwd 查看当前用户目录</li>
 <li>ls 查看当前目录下内容</li>
 <li>mkdir<name> 在当前目录创建目录</li>
-<li>rm -r<name> 删除文件或目录</li>
+<li>rm -r<name> 删除文件</li>
+<li>rm -rf<name> 删除目录</li>
 <li>tar -xvf<name> 解压tar文件</li>
 </ul>
 <h3 id="ssh指令"><a href="#ssh指令" class="headerlink" title="ssh指令"></a>ssh指令</h3><ul>
@@ -135,7 +133,7 @@
 </li>
 <li><p>计算AP就是计算Precision-Recall的下面积</p>
 </li>
-<li><p>AP计算方法(VOC2010之后)(recall处于0到1之间所以能这样计算面积)</p>
+<li><p>AP计算方法(VOC2010之后，2010之前是取11个点)(recall处于0到1之间所以能这样计算面积)</p>
 <p>  <img src="/2022/04/04/note/1.png"><img src="/2022/04/04/note/2.png"></p>
 </li>
 </ul>
@@ -169,10 +167,8 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">   model = <span class="comment">#实例化模型</span></span><br><span class="line">   model.load_state_dict() <span class="comment">#加载网络参数，具体读取方法依模型保存方式而定</span></span><br><span class="line">   optimizer = <span class="comment">#实例化优化器，优化器从torch.optim导入</span></span><br><span class="line">   train_dataset = <span class="comment">#实例化dataset</span></span><br><span class="line">   train_dataloader = DataLoader(train_dataset, batch_size) <span class="comment">#使用Dataloader装载数据，train_data为实例化的dataset的子类，参数shuffle：是否打乱数据，sampler：加载顺序，batch_sampler:采样方式，num_wokers:读取进程数</span></span><br><span class="line">   <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(start_epoch, epoch_num):</span><br><span class="line">       <span class="keyword">for</span> index, data <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dataloader):</span><br><span class="line">           <span class="comment">#读取数据，推理，计算loss并累加，反向传播计算梯度，更新参数，计数并保存数据</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">name</span>(<span class="title class_ inherited__">Dataset</span>):<span class="comment"># 读取数据需要构造一个Dataset的子类表示键到数据的映射</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, transform=</span>):</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, index</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">   model = <span class="comment">#实例化模型</span></span><br><span class="line">   model.load_state_dict() <span class="comment">#加载网络参数，具体读取方法依模型保存方式而定</span></span><br><span class="line">   optimizer = <span class="comment">#实例化优化器，优化器从torch.optim导入</span></span><br><span class="line">   train_dataset = <span class="comment">#实例化dataset</span></span><br><span class="line">   train_dataloader = DataLoader(train_dataset, batch_size) <span class="comment">#使用Dataloader装载数据，train_data为实例化的dataset的子类，参数shuffle：是否打乱数据，sampler：加载顺序，batch_sampler:采样方式，num_wokers:读取进程数</span></span><br><span class="line">   <span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(start_epoch, epoch_num):</span><br><span class="line">       <span class="keyword">for</span> index, data <span class="keyword">in</span> <span class="built_in">enumerate</span>(train_dataloader):</span><br><span class="line">           <span class="comment">#读取数据，推理，计算loss并累加，反向传播计算梯度，更新参数，计数并保存数据</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">name</span>(<span class="title class_ inherited__">Dataset</span>):<span class="comment"># 读取数据需要构造一个Dataset的子类表示键到数据的映射</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, transform=</span>):</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, index</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>): </span><br></pre></td></tr></table></figure>
 
-
-<p>​    </p>
 <ul>
 <li><h4 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h4><ul>
 <li><h5 id="基本剪枝类型"><a href="#基本剪枝类型" class="headerlink" title="基本剪枝类型"></a>基本剪枝类型</h5><ul>
@@ -194,33 +190,69 @@
 </ul>
 </li>
 <li><h4 id="卷积核"><a href="#卷积核" class="headerlink" title="卷积核"></a>卷积核</h4><ul>
-<li>深度可分离卷积(depthwise separable convolution)<ul>
-<li>用于轻量级网络，速度快，不利于提取通道间信息</li>
-<li>难以优化( 剪枝要特殊处理，稀疏深度可分离卷积没开源)</li>
+<li><strong>转置卷积(deconvolution)</strong><ul>
+<li>类似普通卷积的逆运算，但转置卷积不会与普通卷积对应，而是通过学习生成转置卷积的参数</li>
+<li>使数据实现从低维到高维的转变</li>
+<li>对低维特征映射进行padding操作，然后进行卷积运算，得到高维特征映射</li>
+<li><strong>微步卷积</strong><ul>
+<li>转置卷积的特殊情况</li>
+<li>普通卷积会存在stride&gt;1的情况，导致维度大幅降低。此时转置卷积需要使stride&lt;1来还原维度，实现方法是在输入特征之间插0，来使得stride&lt;1</li>
 </ul>
 </li>
-<li>组卷积(group convolution)<ul>
+</ul>
+</li>
+<li><strong>空洞卷积&#x2F;膨胀卷积&#x2F;扩张卷积(Atrons Convolution)</strong><ul>
+<li>用于提升感受野，且不增加参数量</li>
+<li>在卷积核参数间插入空洞(插入0)，增加卷积核大小，提升感受野</li>
+</ul>
+</li>
+<li><strong>深度可分离卷积(depthwise separable convolution)</strong><ul>
+<li>深度可分离卷积分为 DW卷积(depthwise convolution)与PW卷积(pointwise convolution)两部分</li>
+<li>用于轻量级网络，速度快，不利于提取通道间信息</li>
+<li>DW卷积<ul>
+<li>卷积核通道固定为1</li>
+<li>每个卷积核不再与整张输入特征图进行运算，仅与特征图对应通道进行运算(即只在卷积核对应2D平面内进行运算)</li>
+<li>卷积核个数等于输入特征通道数，所以DW卷积不改变特征通道数</li>
+</ul>
+</li>
+<li>PW卷积<ul>
+<li>与普通卷积类似，但卷积核大小固定为1x1</li>
+<li>用于改变通道数</li>
+</ul>
+</li>
+<li>进行一次深度可分离卷积要经过DW卷积运算提取特征再经过PW卷积改变通道数</li>
+</ul>
+</li>
+<li><strong>组卷积(group convolution)</strong><ul>
 <li>不熟</li>
 <li>shufflenet提到警惕群组卷积(影响gpu上运行速度)</li>
 </ul>
 </li>
-<li>稀疏卷积<ul>
+<li><strong>稀疏卷积(spare convolution)</strong><ul>
 <li>一种优化，加速0的运算速度(大概是这样)</li>
 <li>(说一下猜测)普通卷积速度慢可能是因为0的类型为float32且torch无法混合精度计算，或者稀疏卷积有特殊的转二维操作</li>
 </ul>
 </li>
-<li>skip-conv<ul>
+<li><strong>skip-conv</strong><ul>
 <li>用于视频处理</li>
-<li>加入门控函数，对输入的残差做卷积</li>
+<li>只对连续输入帧的残差做卷积运算，将运算结果与上一帧对应卷积层的结果相加得到当前层的结果</li>
+<li>能构建连续帧之间的残差结构原因在于卷积运算是线性运算</li>
+<li>加入门控来过滤残差不为0但对结果影响小的像素(将某些残差值置0)</li>
+<li>门控分为不需要学习的Norm Gate(对小于某一阈值的残差置0)与需要学习的Gumble Gate</li>
 <li>加速依赖稀疏卷积</li>
 <li>会产生更大参数量</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><h4 id="经典主干网络"><a href="#经典主干网络" class="headerlink" title="经典主干网络"></a>经典主干网络</h4><ul>
+<li><h4 id="主干网络"><a href="#主干网络" class="headerlink" title="主干网络"></a>主干网络</h4><ul>
 <li>ResNet<ul>
 <li>提出残差结构，防止网络随深度增加退化，提出瓶颈层，降低计算量</li>
+<li>残差结构：<ul>
+<li>将拟合label变为拟合残差</li>
+<li>传统结构类似寻找映射y&#x3D;f(x),残差结构类似寻找映射y&#x3D;f(x)+x</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>MobilenetV1<ul>
@@ -274,11 +306,22 @@
 </ul>
 </li>
 <li><h4 id="图像分割"><a href="#图像分割" class="headerlink" title="图像分割"></a>图像分割</h4><ul>
+<li><p><strong>Deeplabv1</strong></p>
+<ul>
+<li>使用DCNNs得到coarse score map，使用插值将coarse score map方大到原图大小，使用Fully connected CRF进行refine</li>
+<li>DCNNs<ul>
+<li>基于VGG16，将pool4与pool5的stride改为1，并在修改过的pool后使用空洞卷积。既保留了特征信息又提高了感受野</li>
+<li>仅将原图缩小8倍，使得输出可以直接上采样到原图尺寸，不需要转置卷积</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p><strong>aspp</strong></p>
 </li>
 <li><p><strong>r-aspp</strong></p>
 </li>
 <li><p><strong>lr-aspp</strong></p>
+<p>​    </p>
 </li>
 <li><p><strong>RVM</strong></p>
 <ul>
@@ -301,5 +344,10 @@
       <tags>
         <tag>notes</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2022/04/15/test/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
