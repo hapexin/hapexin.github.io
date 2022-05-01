@@ -116,6 +116,291 @@
     
     
     <article
+  id="post-key"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/01/key/"
+    >机器学习常用名词解释</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/01/key/" class="article-date">
+  <time datetime="2022-05-01T08:56:52.000Z" itemprop="datePublished">2022-05-01</time>
+</a>  
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <ul>
+<li><h4 id="FLOPS"><a href="#FLOPS" class="headerlink" title="FLOPS"></a>FLOPS</h4><ul>
+<li><strong>floating point operations per second</strong>：每秒浮点运算次数</li>
+</ul>
+</li>
+<li><h4 id="FLOPs"><a href="#FLOPs" class="headerlink" title="FLOPs"></a>FLOPs</h4><ul>
+<li><strong>Floating point Opreations</strong>：浮点操作数（计算量）</li>
+</ul>
+</li>
+<li><h4 id="MACs"><a href="#MACs" class="headerlink" title="MACs"></a>MACs</h4><ul>
+<li><p><strong>Multiply–Accumulate Operations</strong>：乘加累计操作数（1MACs包含一次乘法操作与一次加法操作）</p>
+</li>
+<li><p>1MACs可近似看成2FLOPs</p>
+</li>
+<li><p>MACs为近似表示，实际情况中乘法，加法操作可能相等、</p>
+</li>
+<li><p>有硬件将乘加运算作为单独的指令</p>
+</li>
+</ul>
+</li>
+<li><p><strong>True positives(TP)</strong>:预测为正例且实际为正例的个数</p>
+</li>
+<li><p><strong>False positives(FP)</strong>:预测为正例且实际为负例的个数</p>
+</li>
+<li><p><strong>False positives(FN)</strong>:预测为负例但实际为正例的个数</p>
+</li>
+<li><p><strong>True positives(TN)</strong>:预测为负例但实际为负例的个数</p>
+</li>
+<li><p>针对后续的计算，在模型没有对某样本进行预测时，该样本预测值默认为负(相当于预设)</p>
+</li>
+<li><h4 id="MIoU"><a href="#MIoU" class="headerlink" title="MIoU"></a>MIoU</h4><ul>
+<li><strong>Mean Intersection over Union</strong>：一个类别中所有预测值与对应真实值交集与并集的比值的均值<img src="/2022/05/01/key/image1.png"></li>
+</ul>
+</li>
+<li><h4 id="precision"><a href="#precision" class="headerlink" title="precision"></a>precision</h4><ul>
+<li>所有预测为正例的样本中预测正确的比例</li>
+<li>precision&#x3D;TP&#x2F;(TP+FP)</li>
+</ul>
+</li>
+<li><h4 id="recell"><a href="#recell" class="headerlink" title="recell"></a>recell</h4><ul>
+<li>所有实际为正例的样本被正确预测的比例</li>
+<li>recell&#x3D;TP&#x2F;(TP+FN)</li>
+</ul>
+</li>
+<li><h4 id="AP"><a href="#AP" class="headerlink" title="AP"></a>AP</h4><ul>
+<li><strong>Average Precision</strong>:是图像分类任务的评价方法，每个categorie对应一个AP</li>
+<li>每个categorie以confidence score值为依据从大到小排序</li>
+<li>按顺序对每个预测结果计算recell与precision(当前计算顺位后的样本视为未被预测状态，这导致precision值随recall升高呈下降趋势)</li>
+<li>计算AP就是计算Precision-Recall的下面积</li>
+<li>AP计算方法(VOC2010之后，2010之前是取11个点)(recall处于0到1之间所以能这样计算面积)<img src="/2022/05/01/key/image2.png"><img src="/2022/05/01/key/image3.png"></li>
+</ul>
+</li>
+<li><h4 id="mAP"><a href="#mAP" class="headerlink" title="mAP"></a>mAP</h4><ul>
+<li>每个catagorie的AP的均值</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/notes/" rel="tag">notes</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-STL"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/04/29/STL/"
+    >STL</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/29/STL/" class="article-date">
+  <time datetime="2022-04-29T07:25:17.000Z" itemprop="datePublished">2022-04-29</time>
+</a>  
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p><strong>用什么写什么</strong></p>
+<h3 id="algorithm"><a href="#algorithm" class="headerlink" title="algorithm"></a>algorithm</h3><ul>
+<li>堆(heap)<ul>
+<li>make_heap(first_pointer, end_pointer, compare_function)</li>
+<li>pop_heap(first_pointer, end_pointer, compare_function),使用后将尾指针减一</li>
+<li>push_heap(first_pointer,end_pointer,compare_function),使用前将尾指针加一</li>
+<li>以上为STL堆操作的底层操作，堆在STL中有其他更简便的构造法</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">-算法</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-transformer"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/04/27/transformer/"
+    >transformer</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/04/27/transformer/" class="article-date">
+  <time datetime="2022-04-27T14:01:08.000Z" itemprop="datePublished">2022-04-27</time>
+</a>  
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <ul>
+<li><h4 id="关于这篇笔记"><a href="#关于这篇笔记" class="headerlink" title="关于这篇笔记"></a>关于这篇笔记</h4><ul>
+<li>最终目的是了解transformer在变化检测领域的应用</li>
+<li>记录看完别人博客的总结，加下划线的都是瞎写的</li>
+</ul>
+</li>
+<li><h4 id="为什么要学习transformer"><a href="#为什么要学习transformer" class="headerlink" title="为什么要学习transformer"></a>为什么要学习transformer</h4><ul>
+<li>如图  <img src="/2022/04/27/transformer/image4.png"></li>
+</ul>
+</li>
+<li><h4 id="RNN-循环神经网络"><a href="#RNN-循环神经网络" class="headerlink" title="RNN(循环神经网络)"></a>RNN(循环神经网络)</h4><ul>
+<li><strong>概述</strong>：用于处理序列并输出序列(Sequence to Sequence)，具有短期记忆能力，在处理序列时，能够提取并存储已处理的部分序列信息并对当前输入的特征提取任务造成影响的网络，使网络能更好地提取当前输入的信息。常见结构如图<img src="/2022/04/27/transformer/image1.png"></li>
+<li><strong>循环层与隐藏层处理</strong>：t时刻隐藏层神经元参数受t时刻输入与t-1时刻隐藏层值影响(循环层为t-1时刻隐藏层)，计算完成后更新循环层(此时的输入将会堆积到从0到t-1时刻所有输入序列提取的信息中，作为整体对后续序列造成影响)<img src="/2022/04/27/transformer/image2.png"></li>
+<li><strong>RNN存在的问题</strong>：<ul>
+<li>RNN的计算是顺序的，这导致了如下问题：<ul>
+<li>用等量的数据来表达越来越长的序列，不可避免会造成信息损失,导致模型很难学习到长距离的依赖关系，LSTM等门控机制缓解了长距离依赖问题，但效果有限。</li>
+<li>获得t时刻的输出必须取得t-1时刻的计算结果，导致模型并行能力受限</li>
+</ul>
+</li>
+<li><u>无法获得先前序列对当前输入的重要程度(缺少Attention)</u></li>
+<li><u>大部分情况下按固定顺序进行处理无法完全正确地理解每个元素在整个序列中的意义</u></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="transformer"><a href="#transformer" class="headerlink" title="transformer"></a>transformer</h4><ul>
+<li>出自论文《Attention is ALL you Need》，用于自然语言处理，后被应用于计算机视觉领域</li>
+</ul>
+</li>
+<li><h4 id="self-attention"><a href="#self-attention" class="headerlink" title="self-attention"></a>self-attention</h4><ul>
+<li><p>在self-attention中，序列任意位置之间的距离均为一个常量，解决了长期依赖问题</p>
+</li>
+<li><p>用于体现整个序列对局部产生的影响</p>
+</li>
+<li><p>流程：</p>
+<ul>
+<li><p>对序列每个特征向量通过矩阵乘法求Query，Key，Value(通过与三个不同权值矩阵做矩阵乘法获取)简单理解：<u>每个Query都面向面向整个序列，每个Key面向对应特征向量自身，Value是每个特征向量的固有属性</u><img src="/2022/04/27/transformer/image6.png"></p>
+</li>
+<li><p>通过将当前关注的元素对应的特征向量的Query与整个序列对应的特征向量的Key做矩阵乘法，归一化后施以softmax， <u>得到矩阵中每个元素对当前关注元素的相关程度(即每个特征向量的Value对当前关注元素的权值)</u>,,对每个Value乘以权重求和得到self-attention的输出Z</p>
+<p>  <img src="/2022/04/27/transformer/image3.png"><img src="/2022/04/27/transformer/image7.png"></p>
+</li>
+<li><p>更好的并行性：<img src="/2022/04/27/transformer/image8.png"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Multi-Head Attention</strong></p>
+<ul>
+<li>为了使网络拥有多方面的Attention，提升网络信息提取能力，使用拥有不同权重的self-attention作为不同head，对相同输入做不同处理得到在多种注意力下的输出</li>
+<li>将h个self-attention Head的输出拼接为大的特征矩阵经过一个全连接层后得到输出Z</li>
+<li><img src="/2022/04/27/transformer/image5.png"></li>
+</ul>
+</li>
+<li><p><strong>Encoder-Decoder Attention</strong></p>
+<ul>
+<li>寄</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="transformer模型架构"><a href="#transformer模型架构" class="headerlink" title="transformer模型架构"></a>transformer模型架构</h4><ul>
+<li>用于NLP的transformer网络暂时不做记录</li>
+<li>添加了short-cut结构防止网络退化</li>
+<li>基于transformer的可训练神经网络可以进行靠堆叠transformer的形式搭建</li>
+<li>显然，在将任意位置之间的距离缩短为一个常量后，通过self-attention与feed forward无法体现序列的位置信息，所以transformer引入了位置编码来表达位置信息，编码规则可以通过学习获取或人工设计</li>
+<li><strong>存在的问题</strong>：光靠transformer无法获取输入向量的局部特征</li>
+</ul>
+</li>
+<li><h4 id="Vision-Transformer-ViT"><a href="#Vision-Transformer-ViT" class="headerlink" title="Vision Transformer(ViT)"></a>Vision Transformer(ViT)</h4><ul>
+<li>寄</li>
+</ul>
+</li>
+<li><p>总结：学个锤，先用着再说</p>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transformer/" rel="tag">-transformer</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-test"
   class="article article-type-post"
   itemscope
@@ -267,6 +552,11 @@
 </li>
 </ul>
 <h3 id="关于机器学习"><a href="#关于机器学习" class="headerlink" title="关于机器学习"></a>关于机器学习</h3><ul>
+<li><p>获取模型参数量与计算量：</p>
+<ul>
+<li>百度</li>
+</ul>
+</li>
 <li><h4 id="二值化"><a href="#二值化" class="headerlink" title="二值化"></a>二值化</h4><ul>
 <li><p>实现：</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">b = -torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">output = torch.where(<span class="built_in">input</span>&gt;=<span class="number">0</span>,a,b)</span><br></pre></td></tr></table></figure></li>
@@ -295,11 +585,9 @@
 </li>
 <li><p><strong>AP</strong></p>
 <ul>
-<li><p>以目标检测为例，每个categorie对应一个AP</p>
-<ul>
-<li><p>每一个被保留的bounding box视为一个预测为正例的样本，将bounding box与Ground truth进行IoU计算，将IoU大于阈值的目标视为TP</p>
+<li><p>AP是图像分类任务的评价方法，每个categorie对应一个AP</p>
 </li>
-<li><p>以confidence值为依据从大到小排序</p>
+<li><p>每个categorie以confidence score值为依据从大到小排序</p>
 </li>
 <li><p>rank从小到大依次计算precision与recall，此时的将最小rank到当前rank累计预测为正例的样本视为当前所有<strong>预测为正例</strong>的样本，<strong>实际为正例</strong>的样本数不受rank值影响(这导致precision值随recall升高呈下降趋势)</p>
 </li>
@@ -307,8 +595,6 @@
 </li>
 <li><p>AP计算方法(VOC2010之后，2010之前是取11个点)(recall处于0到1之间所以能这样计算面积)</p>
 <p>  <img src="/2022/04/04/note/1.png"><img src="/2022/04/04/note/2.png"></p>
-</li>
-</ul>
 </li>
 </ul>
 </li>

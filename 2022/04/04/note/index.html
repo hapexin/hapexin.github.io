@@ -166,6 +166,11 @@
 </li>
 </ul>
 <h3 id="关于机器学习"><a href="#关于机器学习" class="headerlink" title="关于机器学习"></a>关于机器学习</h3><ul>
+<li><p>获取模型参数量与计算量：</p>
+<ul>
+<li>百度</li>
+</ul>
+</li>
 <li><h4 id="二值化"><a href="#二值化" class="headerlink" title="二值化"></a>二值化</h4><ul>
 <li><p>实现：</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">b = -torch.ones_like(<span class="built_in">input</span>)</span><br><span class="line">output = torch.where(<span class="built_in">input</span>&gt;=<span class="number">0</span>,a,b)</span><br></pre></td></tr></table></figure></li>
@@ -194,11 +199,9 @@
 </li>
 <li><p><strong>AP</strong></p>
 <ul>
-<li><p>以目标检测为例，每个categorie对应一个AP</p>
-<ul>
-<li><p>每一个被保留的bounding box视为一个预测为正例的样本，将bounding box与Ground truth进行IoU计算，将IoU大于阈值的目标视为TP</p>
+<li><p>AP是图像分类任务的评价方法，每个categorie对应一个AP</p>
 </li>
-<li><p>以confidence值为依据从大到小排序</p>
+<li><p>每个categorie以confidence score值为依据从大到小排序</p>
 </li>
 <li><p>rank从小到大依次计算precision与recall，此时的将最小rank到当前rank累计预测为正例的样本视为当前所有<strong>预测为正例</strong>的样本，<strong>实际为正例</strong>的样本数不受rank值影响(这导致precision值随recall升高呈下降趋势)</p>
 </li>
@@ -206,8 +209,6 @@
 </li>
 <li><p>AP计算方法(VOC2010之后，2010之前是取11个点)(recall处于0到1之间所以能这样计算面积)</p>
 <p>  <img src="/2022/04/04/note/1.png"><img src="/2022/04/04/note/2.png"></p>
-</li>
-</ul>
 </li>
 </ul>
 </li>

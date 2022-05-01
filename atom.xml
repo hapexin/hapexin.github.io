@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-15T12:49:04.774Z</updated>
+  <updated>2022-05-01T09:46:02.716Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,79 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习常用名词解释</title>
+    <link href="http://example.com/2022/05/01/key/"/>
+    <id>http://example.com/2022/05/01/key/</id>
+    <published>2022-05-01T08:56:52.000Z</published>
+    <updated>2022-05-01T09:46:02.716Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;FLOPS&quot;&gt;&lt;a href=&quot;#FLOPS&quot; class=&quot;headerlink&quot; title=&quot;FLOPS&quot;&gt;&lt;/a&gt;FLOPS&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;floating point operations per</summary>
+        
+      
+    
+    
+    
+    
+    <category term="notes" scheme="http://example.com/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STL</title>
+    <link href="http://example.com/2022/04/29/STL/"/>
+    <id>http://example.com/2022/04/29/STL/</id>
+    <published>2022-04-29T07:25:17.000Z</published>
+    <updated>2022-05-01T08:07:06.925Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;用什么写什么&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;algorithm&quot;&gt;&lt;a href=&quot;#algorithm&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="-算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>transformer</title>
+    <link href="http://example.com/2022/04/27/transformer/"/>
+    <id>http://example.com/2022/04/27/transformer/</id>
+    <published>2022-04-27T14:01:08.000Z</published>
+    <updated>2022-05-01T09:49:13.622Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;关于这篇笔记&quot;&gt;&lt;a href=&quot;#关于这篇笔记&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="-transformer" scheme="http://example.com/tags/transformer/"/>
+    
+  </entry>
   
   <entry>
     <title>test</title>
@@ -34,7 +107,7 @@
     <link href="http://example.com/2022/04/04/note/"/>
     <id>http://example.com/2022/04/04/note/</id>
     <published>2022-04-04T12:52:03.000Z</published>
-    <updated>2022-04-16T09:24:00.339Z</updated>
+    <updated>2022-05-01T09:27:45.547Z</updated>
     
     
       
