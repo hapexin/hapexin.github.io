@@ -1,0 +1,61 @@
+title = "HapBlog"
+description = "Hapexin 的个人博客，记录写作、产品与工程实践。"
+base_url = "https://hapexin.github.io"
+author = "Hapexin"
+theme = "austere"
+compile_sass = false
+build_search_index = true
+default_language = "en"
+generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
+taxonomies = [{ name = "tags", feed = true }]
+
+[search]
+index_format = "fuse_javascript"
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+
+[slugify]
+paths = "on"
+taxonomies = "on"
+anchors = "on"
+
+[extra]
+keywords = "blog, writing, zola, notes"
+site_icon = "quill.svg"
+strapline = "A quiet place for posts, notes, and experiments."
+footer_text = "HapBlog · 由 <a href='https://www.getzola.org/'>Zola</a> 驱动"
+favicon = "/favicon.ico"
+profile_picture = "/images/avatar.svg"
+inline_icons = false
+image_format = "auto"
+image_quality = 80
+images_default_size = 1024
+images_sizes = [512, 1024, 2048]
+menu_links = [
+  { url = "$BASE_URL/", name = "Home" },
+  { url = "$BASE_URL/posts/", name = "Posts" },
+  { url = "$BASE_URL/about/", name = "About" },
+  { url = "$BASE_URL/tags/", name = "Tags" },
+  { url = "$BASE_URL/search/", name = "Search" },
+]
+
+[extra.colours.light]
+background = "#f7f2e8"
+text = "#1c1917"
+text_muted = "#57534e"
+accent = "#8b4f3c"
+accent_hover = "#6f3f30"
+code_bg = "#efe7da"
+border = "#ddd2c3"
+
+[extra.colours.dark]
+background = "#141210"
+text = "#ece7df"
+text_muted = "#b8aea2"
+accent = "#d39b6a"
+accent_hover = "#ebbe97"
+code_bg = "#211d19"
+border = "#312a24"

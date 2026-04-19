@@ -1,0 +1,15 @@
+[[projects]]
+title = "HapBlog"
+description = "基于 Zola 和 austere 搭建的极简博客，用来承载长期写作和公开笔记。"
+url = "https://github.com/hapexin/HapBlog"
+date = "2026"
+status = "Active"
+tags = ["zola", "writing", "blog"]
+
+[[projects]]
+title = "Notes Garden"
+description = "围绕卡片笔记、主题归档和可复用内容结构做的长期实验。"
+url = "https://hapexin.github.io/about/"
+date = "2026"
+status = "Exploring"
+tags = ["notes", "content", "knowledge"]
